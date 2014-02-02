@@ -14,7 +14,7 @@ System contains:
 
 3)Android client
 
-You can download latests version of project here: http://tests.lit.msu.ru/
+You can download the latest version of project here: http://tests.lit.msu.ru/
 
 
 2013
