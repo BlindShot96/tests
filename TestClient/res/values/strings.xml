@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Лит Тест</string>
+    <string name="action_settings" >Настройки</string>
+    <string name="DownloadChoose" >Выберите способ открытия теста</string>
+    <string-array name="DownloadMethodArray">
+        <item>Скачать с сервера</item>
+        <item>Выбрать файл на устройстве</item>
+    </string-array>
+    <string-array name="ResultMethodArray">
+        <item>Отправить на сервер</item>
+        <item>Сохранить на устройстве</item>
+    </string-array>
+    <string name="hello_world" >Hello world!
+    </string>
+
+    <string name="incorrect_ip_description">
+       Вы ввели неправильный IP адрес.
+    </string>
+    <string name="incorrect_name_description">
+        Вы не ввели имя
+    </string>
+    <string name="incorrect_last_name_description">
+        Вы не ввели фамилию
+    </string>
+    <string name="incorrect_group_description">
+        Вы не ввели название группы
+    </string>
+    <string name="unable_download_test">
+        Не получилось загрузить тест с сервера
+    </string>
+    <string name="parsing_test">
+       Разбор теста...
+       Пожалуйста подождите
+    </string>
+    <string name="downloading_test">
+        Загрузка теста...
+        Пожалуйста подождите
+    </string>
+    <string name="unable_parsing_test">
+        Не удалось разобрать тест
+    </string>
+
+    <string name="info_question_singleChoice">
+        Требуется выбрать один вариант ответа из нескольких предложенных.\nЧтобы посмотреть изображение в полном размере, нажмите и удерживаете палец на изображении.
+    </string>
+    <string name="info_question_multiChoice">
+        Требуется выбрать несколько вариантов ответа из предложенных.\nЧтобы посмотреть изображение в полном размере, нажмите и удерживаете палец на изображении.
+    </string>
+    <string name="info_question_textChoice">
+        Требуется вписать в текстовое поле свой ответ.\nЧтобы посмотреть изображение в полном размере, нажмите и удерживаете палец на изображении.
+    </string>
+    <string name="info_download_activity">
+        Для загрузки теста с сервера, впишите IP-адрес сервера в поле.\nЧтобы открыть файл теста, выберите опцию "Открыть файл теста" и выберите файл теста.
+    </string>
+    <string name="info_result_activity">
+       Для отправки своих ответов на проверку, нажмите на кнопку "Отправить на проверку".\nЧтобы изменить данные о себе, нажмите на кнопку "Изменить данные".
+    </string>
+
+</resources>

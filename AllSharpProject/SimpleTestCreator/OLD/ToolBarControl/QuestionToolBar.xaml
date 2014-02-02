@@ -1,0 +1,16 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="SimpleTestCreator.QuestionToolBar"
+	x:Name="UserControl"
+	d:DesignWidth="185.693" d:DesignHeight="21.96">
+
+	<Grid x:Name="LayoutRoot">
+		<Button  Content="Add" Margin="0,0,157.819,0" />
+		<Button  Content="Delete" Margin="27.873,0,117.603,0" />
+		<Button  Content="Open in new window" Margin="68.09,0,-0.001,0" />
+	</Grid>
+</UserControl>

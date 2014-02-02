@@ -1,0 +1,16 @@
+﻿<Application x:Class="SimpleTestCreator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="Views\MainWindow2.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="UserControls/DataElements/ImagesListBoxItemStyle.xaml"/>
+                <ResourceDictionary Source="Theme/MyTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ColorButtonStyle.xaml"/>
+                <ResourceDictionary Source="Theme/MainWindowStyle.xaml"/>
+                <ResourceDictionary Source="Resources/Images/Images.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>        
+    </Application.Resources>
+</Application>

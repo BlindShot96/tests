@@ -1,0 +1,146 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:testLibrary="clr-namespace:TestLibrary;assembly=TestLibrary"
+	xmlns:dataElements="clr-namespace:SimpleTestCreator.UserControls.DataElements"
+	xmlns:system="clr-namespace:System;assembly=mscorlib"
+	xmlns:viewModels2="clr-namespace:SimpleTestCreator.ViewModels2"
+	mc:Ignorable="d"
+	x:Class="SimpleTestCreator.UserControls.DataElements.DataElementsControl"
+	x:Name="UserControl" >
+
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ImagesListBoxItemTemplate" >
+            <Border x:Name="BorderRoot" BorderThickness="1" BorderBrush="#A7A2A2" Background="Silver" MaxHeight="100" MaxWidth="100">
+                <StackPanel >
+                    <Border >
+                        <Image Height="50" Width="50" Stretch="Fill" Source="{Binding Image}">
+                        </Image>
+                    </Border>
+                    <TextBlock  Text="{Binding FileName}" Margin="0,2,0,0"/>
+                </StackPanel>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="ComboBox.IsSelected" Value="True">
+                    <Setter TargetName="BorderRoot" Property="BorderBrush" Value="RoyalBlue"/>
+                    <Setter TargetName="BorderRoot" Property="Background" Value="Turquoise"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <Style x:Key="ImagesListBoxStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template" Value="{StaticResource ImagesListBoxItemTemplate}"/>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Border  Background="#FFEDEDED">
+        <StackPanel>
+
+            <GroupBox Header="Изображения">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <!--<ListBox x:Name="ImagesListBox" MinHeight="50"  Grid.Row="0"
+                             
+                             SelectedItem="{Binding SelectedImage}"
+                             ItemsSource="{Binding ImagesCollection}"
+                             ItemContainerStyle="{StaticResource ImagesListBoxStyle}"/>-->
+                    <ListView x:Name="ImagesListBox"   
+                              SelectedItem="{Binding SelectedImage}"
+                              ItemsSource="{Binding ImagesCollection}" 
+                              MouseDoubleClick="ImagesListBox_OnMouseDoubleClick"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListView.ItemTemplate>
+                            <DataTemplate DataType="{x:Type viewModels2:ImageItem}">
+                                <Border>
+                                    <StackPanel>
+                                        <Grid>
+                                            <Image MaxWidth="200" MaxHeight="200" Stretch="Fill" Source="{Binding Image}"/>
+                                            <Button x:Name="DeleteButton" DataContext="{Binding}" Click="ButtonBase_OnClick" Margin="200,0,0,200" Content="X" Width="20" Height="20" >
+                                                <Button.Style>
+                                                    <Style TargetType="{x:Type Button}">
+                                                        <Style.Resources>
+                                                            <SolidColorBrush x:Key="ButtonStandartBrush" Color="#443D3C3C" />
+                                                            <SolidColorBrush x:Key="ButtonMouseOverBrush" Color="#DB3D3C3C" />
+                                                        </Style.Resources>
+                                                        <Setter Property="FontSize" Value="14" />
+                                                        <Setter Property="Foreground" Value="{StaticResource ButtonMouseOverBrush}" />
+                                                        <Setter Property="Template">
+                                                            <Setter.Value>
+                                                                <ControlTemplate TargetType="{x:Type Button}">
+                                                                    <Border x:Name="ButtonBorder"
+                                                                            BorderThickness="1"
+                                                                            CornerRadius="25"
+                                                                           >
+                                                                        <ContentPresenter x:Name="ButtonContentPresenter"
+                                                                               VerticalAlignment="Center"  
+                                                                               HorizontalAlignment="Center"/>
+                                                                    </Border>
+                                                                    <ControlTemplate.Triggers>
+                                                                        <Trigger Property="IsPressed" Value="True">
+                                                                            <Setter Property="RenderTransform" TargetName="ButtonBorder">
+                                                                                <Setter.Value>
+                                                                                    <TransformGroup>
+                                                                                        <ScaleTransform ScaleX="0.9" ScaleY="0.9"/>
+                                                                                    </TransformGroup>
+                                                                                </Setter.Value>
+                                                                            </Setter>
+                                                                        </Trigger>
+                                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                                            <Setter Property="Background" TargetName="ButtonBorder">
+                                                                                <Setter.Value>
+                                                                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                                                        <GradientStop Color="#3FFFA2A2" Offset="0.011"/>
+                                                                                        <GradientStop Color="#B2902929" Offset="1"/>
+                                                                                    </LinearGradientBrush>
+                                                                                </Setter.Value>
+                                                                            </Setter>
+                                                                        </Trigger>
+                                                                    </ControlTemplate.Triggers>
+                                                                </ControlTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Style>
+                                                </Button.Style>
+                                            </Button>
+                                        </Grid>
+                                        <TextBlock  Text="{Binding File.ID}" Margin="0,2,0,0"/>
+                                    </StackPanel>
+                                </Border>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <Button x:Name="AddImageButton" Content="Добавить" 
+                                    Command="{Binding AddImageCommand}"  Margin="5"/>
+                        <Button x:Name="DeleteImageButton" Content="Удалить"  
+                               Command="{Binding RemoveImageCommand}" Margin="5"/>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+
+            <!--<GroupBox Header="Длинный текст">
+                <RichTextBox  x:Name="QuestionTextBox" Height="70" Margin="5,0,5,5">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run Text="{Binding LongText}"/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </GroupBox>-->
+
+        </StackPanel>
+    </Border>
+</UserControl>

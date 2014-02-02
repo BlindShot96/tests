@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="fill_parent" android:layout_width="fill_parent">
+<LinearLayout
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/fargment_multi_choice_question_linear_layout"
+              style="@android:style/Theme.Holo.Light">
+
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text main"
+                android:textSize="20dp"
+                android:id="@+id/fargment_multi_choice_question_maintextview" android:layout_gravity="center"
+                android:layout_centerHorizontal="true" android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <Gallery
+            android:id="@+id/fargment_multi_choice_question_imageslist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    <!--<TextView-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="0.5"-->
+            <!--android:text="Text main"-->
+            <!--android:id="@+id/fargment_multi_choice_question_maintextview" android:layout_gravity="center"/>-->
+
+
+    <!--<include layout="@layout/fargment_images_gallery"></include>-->
+
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"/>
+    <ListView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/fargment_multi_choice_question_answerslist"
+            style="@android:style/Theme.Holo"/>
+    <!--<View-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="2dp"-->
+            <!--android:background="@android:color/darker_gray"/>-->
+
+    <!--<TextView-->
+            <!--android:layout_weight="10"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:text="Text res"-->
+            <!--android:id="@+id/fargment_multi_choice_question_resultview" android:layout_gravity="center"/>-->
+</LinearLayout>
+    </ScrollView>

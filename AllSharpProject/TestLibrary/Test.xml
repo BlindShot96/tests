@@ -1,0 +1,91 @@
+﻿<Test xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" Name=\"�������11\" TeacherName=\"teacher1\" MaxMark=\"5\" MinMark=\"2\" MinuteTime=\"10\">
+  \r\n  <MediaData>
+    \r\n    <Text>testdata1</Text>\r\n    <Files />\r\n
+  </MediaData>\r\n  <Questions class=\"java.util.HashMap\">
+    \r\n    <Item>
+      \r\n      <Key>
+        \r\n        <string>first</string>\r\n
+      </Key>\r\n      <Value>
+        \r\n        <Question xsi:type=\"QSingleChoice\" ID=\"first\" Type=\"SingleChoice\" MaxBall=\"1\" MinBall=\"0\" Number=\"1\">
+          \r\n          <Answers>
+            \r\n            <Item>
+              \r\n              <Key>
+                \r\n                <string>answer1</string>\r\n
+              </Key>\r\n              <Value>
+                \r\n                <AnswerBase xsi:type=\"Answer\" ID=\"answer1\" IsTrue=\"true\">
+                  \r\n                  <MediaData>
+                    \r\n                    <Text>answer1</Text>\r\n                    <Files />\r\n
+                  </MediaData>\r\n
+                </AnswerBase>\r\n
+              </Value>\r\n
+            </Item>\r\n            <Item>
+              \r\n              <Key>
+                \r\n                <string>answer2</string>\r\n
+              </Key>\r\n              <Value>
+                \r\n                <AnswerBase xsi:type=\"Answer\" ID=\"answer2\" IsTrue=\"false\">
+                  \r\n                  <MediaData>
+                    \r\n                    <Text>answer2</Text>\r\n                    <Files />\r\n
+                  </MediaData>\r\n
+                </AnswerBase>\r\n
+              </Value>\r\n
+            </Item>\r\n
+          </Answers>\r\n          <MediaData>
+            \r\n            <Text>Data111</Text>\r\n            <Files />\r\n
+          </MediaData>\r\n
+        </Question>\r\n
+      </Value>\r\n
+    </Item>\r\n    <Item>
+      \r\n      <Key>
+        \r\n        <string>second</string>\r\n
+      </Key>\r\n      <Value>
+        \r\n        <Question xsi:type=\"QMultiChoice\" ID=\"second\" Type=\"MultiChoice\" MaxBall=\"2\" MinBall=\"0\" Number=\"2\" VerifyByAll=\"true\">
+          \r\n          <Answers>
+            \r\n            <Item>
+              \r\n              <Key>
+                \r\n                <string>answer1</string>\r\n
+              </Key>\r\n              <Value>
+                \r\n                <AnswerBase xsi:type=\"Answer\" ID=\"answer1\" IsTrue=\"true\">
+                  \r\n                  <MediaData>
+                    \r\n                    <Text>answer1</Text>\r\n                    <Files />\r\n
+                  </MediaData>\r\n
+                </AnswerBase>\r\n
+              </Value>\r\n
+            </Item>\r\n            <Item>
+              \r\n              <Key>
+                \r\n                <string>answer2</string>\r\n
+              </Key>\r\n              <Value>
+                \r\n                <AnswerBase xsi:type=\"Answer\" ID=\"answer2\" IsTrue=\"true\">
+                  \r\n                  <MediaData>
+                    \r\n                    <Text>answer2</Text>\r\n                    <Files />\r\n
+                  </MediaData>\r\n
+                </AnswerBase>\r\n
+              </Value>\r\n
+            </Item>\r\n            <Item>
+              \r\n              <Key>
+                \r\n                <string>answer3</string>\r\n
+              </Key>\r\n              <Value>
+                \r\n                <AnswerBase xsi:type=\"Answer\" ID=\"answer3\" IsTrue=\"false\">
+                  \r\n                  <MediaData>
+                    \r\n                    <Text>answer3</Text>\r\n                    <Files />\r\n
+                  </MediaData>\r\n
+                </AnswerBase>\r\n
+              </Value>\r\n
+            </Item>\r\n            <Item>
+              \r\n              <Key>
+                \r\n                <string>answer4</string>\r\n
+              </Key>\r\n              <Value>
+                \r\n                <AnswerBase xsi:type=\"Answer\" ID=\"answer4\" IsTrue=\"false\">
+                  \r\n                  <MediaData>
+                    \r\n                    <Text>answer4</Text>\r\n                    <Files />\r\n
+                  </MediaData>\r\n
+                </AnswerBase>\r\n
+              </Value>\r\n
+            </Item>\r\n
+          </Answers>\r\n          <MediaData>
+            \r\n            <Text>q2data</Text>\r\n            <Files />\r\n
+          </MediaData>\r\n
+        </Question>\r\n
+      </Value>\r\n
+    </Item>\r\n
+  </Questions>\r\n
+</Test>"

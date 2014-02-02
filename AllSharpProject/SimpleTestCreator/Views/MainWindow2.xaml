@@ -1,0 +1,93 @@
+﻿<Window x:Class="SimpleTestCreator.MainWindow2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewModels2="clr-namespace:SimpleTestCreator.ViewModels2"
+        xmlns:simpleTestCreator="clr-namespace:SimpleTestCreator"
+        Title="Редактор тестов" Height="552.8" Width="742.793" >
+    
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Menu>
+                <MenuItem Header="Файл">
+                    <MenuItem Header="Новый" Command="{Binding NewTestCommand}"/>
+                    <MenuItem Header="Открыть" Command="{Binding OpenTestCommand}"/>
+                    <MenuItem Header="Сохранить как" Command="{Binding SaveAsTestCommand}"/>
+                    <MenuItem Header="Сохранить в андроид формате" Command="{Binding SaveAsAndroidCommand}"/>
+                    <Separator/>
+                    <MenuItem Header="Выход"/>
+                </MenuItem>
+                <MenuItem Header="Правка">
+                    <MenuItem Header="Отменить" Command="Undo"/>
+                    <MenuItem Header="Вернуть" Command="Redo"/>
+                    <Separator/>
+                    <MenuItem  Header="    Добавить вопрос" >
+                        <MenuItem x:Uid="SQ" Header="Одиночный выбор" Click="AddQuestionMenuItem_OnClick"/>
+                        <MenuItem x:Uid="MQ" Header="Множественный выбор" Click="AddQuestionMenuItem_OnClick"/>
+                        <MenuItem  x:Uid="TQ" Header="Ответ в виде строки" Click="AddQuestionMenuItem_OnClick"/>
+                    </MenuItem>
+                    <MenuItem Header="Удалить вопрос" Command="{Binding RemoveQuestionCommand}"/>
+                    <MenuItem Header="Настройки теста" Command="{Binding OpenTestSettingsCommand}"/>
+                </MenuItem>
+            </Menu>
+            <ToolBarTray >
+                <ToolBar x:Name="QuestioBar">
+                    <Button Content="Up" Command="{Binding UpSelectedQuestionCommand}"/>
+                    <Button Content="Down" Command="{Binding DownSelectedQuestionCommand}"/>
+                    <Menu>
+                        <Menu.Style>
+                            <Style TargetType="Menu" >
+                                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Menu}">
+                                            <Border x:Name="Border" Background="Transparent">
+                                                <StackPanel ClipToBounds="True" Orientation="Horizontal" IsItemsHost="True"/>
+                                            </Border>                                         
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>                               
+                            </Style>
+                        </Menu.Style>                      
+                        <MenuItem  Header="Добавить вопрос" >
+                            <MenuItem x:Uid="SQ" Header="Одиночный выбор" Click="AddQuestionMenuItem_OnClick"/>
+                            <MenuItem x:Uid="MQ" Header="Множественный выбор" Click="AddQuestionMenuItem_OnClick"/>
+                            <MenuItem  x:Uid="TQ" Header="Ответ в виде строки" Click="AddQuestionMenuItem_OnClick"/>
+                      </MenuItem>
+                    </Menu>
+                    <Button Content="Удалить Вопрос" Command="{Binding RemoveQuestionCommand}"/>                  
+                </ToolBar>
+
+                <ToolBar x:Name="TestToolBar">
+                    <Button Content="Настройки теста" Command="{Binding OpenTestSettingsCommand}"/>
+                    <Button Content="Сохранить" Command="{Binding SaveTestCommand}"/>
+                    <Button Content="Сохранить как" Command="{Binding SaveAsTestCommand}"/>
+                </ToolBar>
+            </ToolBarTray>
+            
+        </StackPanel>
+        <DockPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" LastChildFill="True">
+
+            <GroupBox Header="Вопросы:" DockPanel.Dock="Left" >
+            <ListBox  x:Name="QuestionListView" IsSynchronizedWithCurrentItem="True"
+                 ItemsSource="{Binding QuestionViewModels}" 
+                 SelectedItem="{Binding ShowingQuestion}"
+                      VerticalAlignment="Stretch" Height="307"
+                   >
+               <ListBox.ItemTemplate>
+                   <DataTemplate DataType="{x:Type viewModels2:QuestionViewModelBase}">
+                        <TextBlock MinWidth="50" Text="{Binding Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    </DataTemplate> 
+               </ListBox.ItemTemplate>
+            </ListBox>
+            </GroupBox>
+
+            <ScrollViewer  CanContentScroll="False" Background="#FFF2F2F2" DockPanel.Dock="Top">
+                <GroupBox Header="{Binding Path=ShowingQuestion.Header}">
+                    <ContentPresenter x:Name="QuestionContentControl" />
+                </GroupBox>
+            </ScrollViewer>
+
+        </DockPanel>
+    </DockPanel>
+</Window>

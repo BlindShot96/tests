@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <ScrollView  android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_above="@+id/activity_new_test_result_send">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:orientation="vertical"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:text="Данные пользователя"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8sp"
+                    android:layout_marginLeft="5sp"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="2.3sp"
+                  android:background="#ffc9c9c9"
+                  android:layout_marginTop="1sp"/>
+
+            <GridLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:columnCount="2">
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:singleLine="false"
+                          android:text="Имя"
+                          android:layout_marginTop="5sp"
+                          android:layout_marginLeft="5sp"
+                          android:textSize="14sp"
+                          android:textColor="@android:color/secondary_text_light_nodisable"/>
+
+                <TextView android:id = "@+id/activity_new_test_result_name_box"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:singleLine="true"
+                          android:layout_marginTop="5sp"
+                          android:layout_marginLeft="15sp"
+                          android:textColor="@android:color/primary_text_light"
+                          android:textSize="15sp"
+                        />
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:singleLine="false"
+                          android:text="Фамилия"
+                          android:layout_marginTop="5sp"
+                          android:layout_marginLeft="5sp"
+                          android:textSize="14sp"
+                          android:textColor="@android:color/secondary_text_light_nodisable"/>
+
+                <TextView  android:id = "@+id/activity_new_test_result_surname_box"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:singleLine="true"
+                           android:layout_marginTop="5sp"
+                           android:layout_marginLeft="15sp"
+                           android:textColor="@android:color/primary_text_light"
+                           android:textSize="15sp"
+                        />
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:singleLine="false"
+                          android:text="Номер группы/класса"
+                          android:layout_marginTop="5sp"
+                          android:layout_marginLeft="5sp"
+                          android:textSize="13sp"
+                          android:textColor="@android:color/secondary_text_light_nodisable"/>
+
+                <TextView  android:id = "@+id/activity_new_test_result_group_box"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:singleLine="true"
+                           android:layout_marginTop="5sp"
+                           android:layout_marginLeft="15sp"
+                           android:textColor="@android:color/primary_text_light"
+                        />
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:singleLine="false"
+                          android:text="Адрес сервера"
+                          android:layout_marginTop="5sp"
+                          android:layout_marginLeft="5sp"
+                          android:textSize="13sp"
+                          android:textColor="@android:color/secondary_text_light_nodisable"/>
+
+                <TextView  android:id = "@+id/activity_new_test_result_address_box"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:singleLine="true"
+                           android:layout_marginTop="5sp"
+                           android:layout_marginLeft="15sp"
+                           android:textColor="@android:color/primary_text_light"
+                        />
+
+            </GridLayout>
+
+            <Button android:id="@+id/activity_new_test_result_settings_button"
+                    android:layout_width="200sp"
+                    android:layout_height="40sp"
+                    android:text="Изменить данные"
+                    android:layout_gravity="center"
+                    android:enabled="true"
+                    android:textSize="15sp"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="false"
+                    android:text="Результаты тестирования"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8sp"
+                    android:layout_marginLeft="5sp"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="2.3sp"
+                  android:background="#ffc9c9c9"
+                  android:layout_marginTop="1sp"/>
+
+
+            <LinearLayout android:layout_height="match_parent"
+                          android:layout_width="match_parent"
+                          android:layout_weight="20"
+                          android:layout_marginTop="2sp"
+                          android:orientation="vertical">
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:singleLine="false"
+                          android:text="Оценка"
+                          android:layout_marginTop="5sp"
+                          android:layout_marginLeft="5sp"
+                          android:textSize="15sp"
+                          android:textColor="@android:color/secondary_text_light_nodisable"/>
+
+                <TextView android:id = "@+id/activity_new_test_result_mark_box"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:singleLine="true"
+                          android:layout_marginTop="5sp"
+                          android:layout_marginLeft="5sp"
+                          android:textColor="@android:color/primary_text_light"
+                          android:textSize="17sp"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:singleLine="false"
+                          android:text="Количество баллов"
+                          android:layout_marginTop="5sp"
+                          android:layout_marginLeft="5sp"
+                          android:textSize="15sp"
+                          android:textColor="@android:color/secondary_text_light_nodisable"/>
+
+                <TextView  android:id = "@+id/activity_new_test_result_ball_box"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:singleLine="true"
+                           android:layout_marginTop="5sp"
+                           android:layout_marginLeft="5sp"
+                           android:textColor="@android:color/primary_text_light"
+                           android:textSize="17sp"
+                        />
+
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:singleLine="false"
+                          android:text="Процент правильных ответов"
+                          android:layout_marginTop="5sp"
+                          android:layout_marginLeft="5sp"
+                          android:textSize="15sp"
+                          android:textColor="@android:color/secondary_text_light_nodisable"/>
+
+
+                <TextView  android:id = "@+id/activity_new_test_result_procent_box"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:singleLine="true"
+                           android:layout_marginTop="5sp"
+                           android:layout_marginLeft="5sp"
+                           android:textColor="@android:color/primary_text_light"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button  android:id = "@+id/activity_new_test_result_send"
+             android:windowSoftInputMode="adjustPan"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:text="Отправить на проверку"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentLeft="true"
+             android:enabled="true"
+             android:layout_gravity="center"
+             android:clickable="true" android:focusable="true"
+            />
+
+
+</RelativeLayout>

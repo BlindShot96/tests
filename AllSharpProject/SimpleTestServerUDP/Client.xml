@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Client Name ="Пётр" LastName="Зайдель" Group ="10.3">
+  <Data>
+    <ClientAnswer Name ="Test one">
+      <Questions>
+        <Question ID="1"  Type ="SingleChoice">
+          <ClientAnswers>
+            <Answer>
+              <!--Это ID ответа-->
+              101
+            </Answer>
+          </ClientAnswers>
+        </Question>
+        <Question ID="2"  Type ="SingleChoice">
+          <ClientAnswers>
+            <Answer>
+              <!--Это ID ответа-->
+              201
+            </Answer>
+          </ClientAnswers>
+        </Question>
+      </Questions>
+    </ClientAnswer>
+  </Data>
+</Client>

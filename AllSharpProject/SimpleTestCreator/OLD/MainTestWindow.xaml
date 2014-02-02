@@ -1,0 +1,70 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" xmlns:local="clr-namespace:SimpleTestCreator" x:Class="SimpleTestCreator.MainTestWindow"
+        Title="MainTestWindow" Height="400" Width="839">
+
+    <StackPanel> 
+        <StackPanel>
+            <Menu>
+                <MenuItem Header="File">
+                    <MenuItem Header="New"/>
+                    <MenuItem Header="Open" Command="Open"/>
+                    <MenuItem Header="Save"/>
+                    <MenuItem Header="SaveAs..."/>
+                    <Separator/>
+                    <MenuItem Header="Exit"/>
+                </MenuItem>
+                <MenuItem Header="Edit">
+                    <MenuItem Header="Undo"/>
+                    <MenuItem Header="Redo"/>
+                    <Separator/>
+                    <MenuItem Header="Cut"/>
+                    <MenuItem Header="Copy"/>
+                    <MenuItem Header="Paste"/>
+                </MenuItem>
+            </Menu>
+            <TabControl>
+                <TabItem Header="Main">
+                    <ToolBarTray>
+                        <ToolBar x:Name="ToolBar1">
+                            <Button Content="Butto1"/>
+                            <Button Content="Button2"/>
+                            <Button Content="Button3"/>
+                        </ToolBar>
+
+                        <ToolBar x:Name="ToolBar3">
+                            <Button Content="Butto4"/>
+                            <Button Content="Button5"/>
+                            <Button Content="Button6"/>
+                        </ToolBar>
+                    </ToolBarTray>
+                </TabItem>
+                <TabItem Header="Two">
+                    <ToolBarTray>
+                        <ToolBar x:Name="ToolBar2">
+                            <Button Content="Butto1"/>
+                            <Button Content="Button2"/>
+                        </ToolBar>
+                    </ToolBarTray>
+                </TabItem>
+            </TabControl>
+   
+
+        </StackPanel>
+        <DockPanel Height="296" Margin="0,0,-0.2,0" >
+            <ListBox x:Name="listbox1" IsSynchronizedWithCurrentItem="True"
+                 DataContext="{Binding TestManager.Test.Questions}"
+                 ItemContainerStyle="{DynamicResource QuestionsListBoxItemStyle2}" 
+                 DockPanel.Dock="Left" MinWidth="100" Height="296"    />
+			<Border DockPanel.Dock="Right" > 
+                <TextBlock Text="{Binding Question}"/>
+            </Border>
+        </DockPanel>
+    </StackPanel>
+   
+
+   
+
+
+</Window>

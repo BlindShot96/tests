@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_activity_test_download_action_open"
+          android:title="Открыть файл теста"
+            />
+    <item android:id="@+id/menu_activity_test_result_action_about"
+          android:icon="@drawable/ic_action_about"
+          android:title="Информация"
+          android:showAsAction="ifRoom|withText" />
+</menu>

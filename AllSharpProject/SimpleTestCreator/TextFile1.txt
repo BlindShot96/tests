@@ -1,0 +1,79 @@
+﻿<StackPanel Background="#FFF2F2F2">
+            <StackPanel>
+                <GroupBox Header="Название вопроса">
+                    <TextBox  x:Name="NameTextBox" Text="{Binding Name}" Margin="5,0,5,5"/>
+                </GroupBox>
+                <GroupBox Header="Текст вопроса">
+                    <RichTextBox  x:Name="QuestionTextBox" Height="72.8" Margin="5,0,5,5">
+                        <FlowDocument>
+                            <Paragraph>
+                                <Run Text="{Binding Text,Mode=TwoWay}"/>
+                            </Paragraph>
+                        </FlowDocument>
+                    </RichTextBox>
+                </GroupBox>
+                <simpleTestCreator:DataElementsControl DataContext="{Binding MediaData,Mode=TwoWay}" Height="265"/>
+                <GroupBox Header="Ответы" Height="161">
+                    <StackPanel>
+                        <ListBox ItemTemplate="{DynamicResource SingleChoiceAnswersListBoxItemTemplate}"
+                             ItemsSource="{Binding Answers,Mode=TwoWay}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Добавить" Command="" Margin="5,2"/>
+                            <Button Content="Удалить"  Command="" Margin="5,2"/>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </StackPanel>
+
+		 <Button Content="" Command="{Binding SaveTestCommand}" Width="30" Height="30">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/SimpleTestCreator;component/Resources/Images/save.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+		<GroupBox Header="Изображения">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition/>
+							<RowDefinition/>
+						</Grid.RowDefinitions>
+						<ListBox x:Name="ImagesListBox" MinHeight="50"  Grid.Row="0" ItemsSource="{Binding ImagesCollection}">
+                            <ListBox.ItemTemplate>
+                             <DataTemplate DataType="testLibrary:MediaFile">
+                                <Border BorderThickness="1" BorderBrush="#FF5B4A4A">
+                                    <Border.Effect>
+                                        <DropShadowEffect BlurRadius="3" Color="#FF786A6A" ShadowDepth="0" Direction="430"/>
+                                    </Border.Effect>
+                                    <StackPanel Background="#FFE5E5E5">
+                                        <Border BorderBrush="#FF6B5C5C" BorderThickness="1">
+                                            <Image Height="50" Width="50">
+                                                <Image.Source>
+                                                    <Binding Path="Bytes" Converter="{StaticResource ByteToImageConverter}"/>
+                                                </Image.Source>
+                                            </Image>
+                                        </Border>
+                                        <TextBlock  Text="{Binding FileName}" Margin="0,2,0,0"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        </ListBox>
+						<StackPanel Grid.Row="1" Orientation="Horizontal">
+							<Button x:Name="AddImageButton" Content="Добавить" Click="AddImageButton_OnClick" 
+                                    Command="" 
+                                    CommandParameter="" Margin="5"/>
+							<Button x:Name="DeleteImageButton" Content="Удалить" Click="DeleteImageButton_OnClick" Margin="5"/>
+						</StackPanel>
+					</Grid>					
+				</GroupBox>
+
+				 <ScrollViewer CanContentScroll="False" Background="#FFF2F2F2" DockPanel.Dock="Top">
+                <GroupBox  Header="Вопрос:"  >
+                    <ContentControl x:Name="QuestionContentControl"  Content="{Binding ShowingQuestion}" 
+                                    LayoutUpdated="QuestionContentControl_OnLayoutUpdated"
+                                    />
+                    
+                </GroupBox>
+            </ScrollViewer>

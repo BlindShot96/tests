@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Test Name="test1" TeacherName="teacher1" MaxMark="5" MinMark="2" MinuteTime="10">
+  <MediaData>
+    <Text>тестдата1</Text>
+  </MediaData>
+</Test>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Test Name ="Test one" TeacherName ="Alena Ivanovna" QuestionsCount ="1" MaxMark ="4">
+  <MediaData>
+    <Text>Это очень сложный тест </Text>
+    <Files>
+      <File Extension = ".jpg" Name ="picture1">
+        <Bytes>1010110110110101101101010101001010</Bytes>
+        <Text>это картинка</Text>
+      </File>
+    </Files>
+  </MediaData>
+  <Questions>
+    <Question ID="1" MaxMark="2" MinMark ="0" Type ="SingleChoice">
+      <MediaData>
+        <Text>Единица силы тока называется... </Text>
+        <Files>
+          <File Extension = ".jpg" Name ="picture1">
+            <Bytes>1010110110110101101101010101001010</Bytes>
+            <Text>это картинка</Text>
+          </File>
+        </Files>
+      </MediaData>
+      <Answers>
+        <Answer ID="101">
+          <MediaData>
+            <Text>вольтом</Text>
+          </MediaData>
+        </Answer>
+        <Answer ID="101">
+          <MediaData>
+            <Text>ампером</Text>
+          </MediaData>
+        </Answer>
+        <Answer ID="103">
+          <MediaData>
+            <Text>ньютоном</Text>
+          </MediaData>
+        </Answer>
+      </Answers>
+      <RightAnswers>
+        <Answer>
+          101
+        </Answer>
+      </RightAnswers>
+    </Question>
+  <Question ID="2" MaxMark="2" MinMark ="0" Type ="SingleChoice">
+    <MediaData>
+      <Text>Единица силы тока называется... </Text>
+      <Files>
+        <File Extension = ".jpg" Name ="picture1">
+          <Bytes>1010110110110101101101010101001010</Bytes>
+          <Text>это картинка</Text>
+        </File>
+      </Files>
+    </MediaData>
+    <Answers>
+      <Answer ID="201">
+        <MediaData>
+          <Text>вольтом</Text>
+        </MediaData>
+      </Answer>
+      <Answer ID="202">
+        <MediaData>
+          <Text>ампером</Text>
+        </MediaData>
+      </Answer>
+      <Answer ID="203">
+        <MediaData>
+          <Text>ньютоном</Text>
+        </MediaData>
+      </Answer>
+    </Answers>
+    <RightAnswers>
+      <Answer>
+        201
+      </Answer>
+    </RightAnswers>
+  </Question>
+  </Questions>
+</Test>

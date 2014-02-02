@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClientAnswer Name ="Test one">
+  <Questions>
+    <Question ID="1"  Type ="SingleChoice">
+      <ClientAnswers>
+        <Answer>
+          <!--Это ID ответа-->
+          101
+        </Answer>
+      </ClientAnswers>
+    </Question>
+    <Question ID="2"  Type ="SingleChoice">
+      <ClientAnswers>
+        <Answer>
+          <!--Это ID ответа-->
+          201
+        </Answer>
+      </ClientAnswers>
+    </Question>
+    <!--<Question ID="2"  Type ="TextQuestion">
+      <ClientAnswers>
+        <Answer>
+          --><!--Это текст ответа--><!--
+          всё верно
+        </Answer>
+      </ClientAnswers>
+    </Question>-->
+    <!--<Question ID="3"  Type ="MultiChoice">
+      <ClientAnswers>
+        <Answer>
+          --><!--Это ID ответа--><!--
+          101
+        </Answer>
+        <Answer>
+          --><!--Это ID ответа--><!--
+          102
+        </Answer>
+      </ClientAnswers>
+    </Question>-->
+  </Questions>
+</ClientAnswer>

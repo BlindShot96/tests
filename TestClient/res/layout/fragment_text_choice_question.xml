@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="fill_parent" android:layout_width="fill_parent">
+<LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:id="@+id/fargment_text_choice_question_linear_layout"
+              style="@android:style/Theme.Holo.Light">
+
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text main"
+                android:textSize="20dp"
+                android:id="@+id/fargment_text_choice_question_maintextview" android:layout_gravity="center"
+                android:layout_centerHorizontal="true" android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+
+    <Gallery
+            android:id="@+id/fargment_text_choice_question_imageslist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    <!--<include layout="@layout/fargment_images_gallery"></include>-->
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"/>
+
+    <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ваш ответ"
+            android:id="@+id/fargment_single_choice_question_text_answer"
+            android:layout_gravity="center"
+            style="@android:style/Theme.Light"/>
+
+</LinearLayout>
+</ScrollView>

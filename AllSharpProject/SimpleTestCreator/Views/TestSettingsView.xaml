@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="SimpleTestCreator.Views.TestSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel>
+        <GroupBox Header="Название теста">
+            <TextBox  x:Name="NameTextBox" Margin="5,0,5,5" Text="{Binding Source=Settings, Path=Name,UpdateSourceTrigger=PropertyChanged}"/>
+        </GroupBox>
+        <GroupBox Header="Имя учителя">
+            <TextBox  x:Name="TeacherNameTextBox" Margin="5,0,5,5" Text="{Binding Source=Settings, Path=TeacherName,UpdateSourceTrigger=PropertyChanged}"/>
+        </GroupBox>
+        <GroupBox Header="Описание теста">
+            <ScrollViewer>
+                <TextBox  x:Name="DescritionTextBox" Margin="5,0,4.6,5" Text="{Binding Source=Data, Path=Text,UpdateSourceTrigger=PropertyChanged}" Height="135"/>
+            </ScrollViewer>
+        </GroupBox>
+    </StackPanel>
+</UserControl>

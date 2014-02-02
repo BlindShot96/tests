@@ -1,0 +1,9 @@
+﻿<UserControl x:Class="SimpleTestCreator.QuestionsListBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="273.288" Width="223.46" 
+             >
+    <Border>
+        <ListBox x:Name="QList" IsSynchronizedWithCurrentItem="True" 
+                 ItemContainerStyle="{StaticResource QuestionsListBoxItemStyle}"/>
+    </Border>
+</UserControl>

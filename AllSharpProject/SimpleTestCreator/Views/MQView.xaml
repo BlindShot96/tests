@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="SimpleTestCreator.MQView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:testLibrary="clr-namespace:TestLibrary;assembly=TestLibrary"
+             xmlns:simpleTestCreator="clr-namespace:SimpleTestCreator"
+             xmlns:dataElements="clr-namespace:SimpleTestCreator.UserControls.DataElements"
+             xmlns:userControls="clr-namespace:SimpleTestCreator.UserControls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+      
+        <Style x:Key="AnswersListBoxStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border x:Name="BorderRoot"  BorderThickness="1" BorderBrush="#A7A2A2" Background="Silver">
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox IsChecked="{Binding IsTrue}"/>
+                                    <TextBox Text="{Binding Data.Text}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="ListBoxItem.IsSelected" Value="True">
+                                <Setter TargetName="BorderRoot" Property="BorderBrush" Value="RoyalBlue"/>
+                                <Setter TargetName="BorderRoot" Property="Background" Value="Turquoise"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>           
+        </Style>
+        <Style x:Key="MultiChoiceBallAnswersBoxStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border x:Name="BorderRoot"  BorderThickness="1" BorderBrush="#A7A2A2" Background="Silver">
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBox Text="{Binding Data.Text}"/>
+                                    <TextBlock Text="Ценность ответа:" Margin="5,0"/>
+                                    <xctk:IntegerUpDown Value="{Binding Ball}" Increment="1" Maximum="100" Minimum="-100"/>                         
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="ComboBox.IsSelected" Value="True">
+                                <Setter TargetName="BorderRoot" Property="BorderBrush" Value="RoyalBlue"/>
+                                <Setter TargetName="BorderRoot" Property="Background" Value="Turquoise"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        
+    </UserControl.Resources>
+
+    <StackPanel>
+        <GroupBox Header="Название вопроса">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Название вопроса:" Margin="5,0,5,5"/>
+                <TextBox  x:Name="NameTextBox" Margin="5,0,5,5"  Text="{Binding Name,UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="Ценность вопроса:" Margin="5,0,5,5"/>
+                <xctk:IntegerUpDown Value="{Binding Path=QuestionModel.MaxBall}" Increment="1" Maximum="100" Minimum="0"/>
+            </StackPanel>
+        </GroupBox>
+        <Expander Header="Текст Вопроса" IsExpanded="True">
+            <TextBox x:Name="QuestionTextBox" Height="72.8" Margin="5,0,5,5" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        </Expander>
+
+        <Expander Header="Данные" IsExpanded="False">
+            <dataElements:DataElementsControl DataContext="{Binding DataElementsViewModel,Mode=TwoWay}" />
+        </Expander>
+
+        <Expander Header="Ответы" IsExpanded="True">
+            <StackPanel>
+               
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Способ проверки:" Margin="0,0,10,0" ></TextBlock>
+                    <ComboBox x:Name="ModeComboBox" SelectedIndex="0" Margin="0,0,5,5" MinWidth="200" MaxWidth="200" SelectionChanged="ComboBox_SelectionChanged">
+                    <ComboBox.Items>
+                        <ComboBoxItem>Проверка по количееству
+                            правильных ответов</ComboBoxItem>
+                        <ComboBoxItem>Проверка по баллам</ComboBoxItem>                      
+                    </ComboBox.Items>
+                    <ComboBox.ItemContainerStyle>
+                            <Style>
+                                <Setter Property="ListBoxItem.Margin" Value="5"/>
+                                <Setter Property="ListBoxItem.Padding" Value="5"/>
+                            </Style>
+                        </ComboBox.ItemContainerStyle>
+                        
+                </ComboBox>
+                </StackPanel>
+                <ListBox x:Name="AnswersListBox" 
+                             ItemsSource="{Binding Answers,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                             SelectedItem="{Binding SelectedAnswer}"
+                             >
+                    <ListBox.Style>
+                        <Style TargetType="{x:Type ListBox}">
+                            <Setter Property="ItemContainerStyle" Value="{DynamicResource AnswersListBoxStyle}" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=ModeComboBox, Path=SelectedIndex}" Value="1">
+                                    <Setter Property="ItemContainerStyle" Value="{DynamicResource MultiChoiceBallAnswersBoxStyle}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=ModeComboBox, Path=SelectedIndex}" Value="0">
+                                    <Setter Property="ItemContainerStyle" Value="{DynamicResource AnswersListBoxStyle}" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ListBox.Style>
+                </ListBox>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="AddAnswerButton" Content="Добавить" Command="{Binding AddAnswerCommand}"  Margin="5,2"/>
+                    <Button x:Name="DeleteAnswerButton" Content="Удалить" Command="{Binding RemoveAnswerCommand}"   Margin="5,2"/>
+                </StackPanel>
+            </StackPanel>
+        </Expander>
+    </StackPanel>
+</UserControl>
