@@ -1,4 +1,3 @@
-
 Electronic Testing System For Android Devices (LIT Test) 
 ====
 
@@ -14,6 +13,8 @@ System contains:
 2)Server
 
 3)Android client
+
+You can download latests version of project here: http://tests.lit.msu.ru/
 
 
 2013
